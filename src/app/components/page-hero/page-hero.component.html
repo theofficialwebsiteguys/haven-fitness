@@ -1,0 +1,19 @@
+<section class="page-hero">
+  <div class="page-hero__ambient" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+
+      @if (label()) {
+        <p class="page-hero__label section-label">{{ label() }}</p>
+      }
+
+      <h1 class="page-hero__title">{{ title() }}</h1>
+
+      @if (description()) {
+        <p class="page-hero__description">{{ description() }}</p>
+      }
+
+    </div>
+  </div>
+  <div class="page-hero__rule"></div>
+</section>

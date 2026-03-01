@@ -1,0 +1,190 @@
+<app-page-hero
+  label="Programs"
+  title="CHOOSE YOUR PATH"
+  description="Three programs. One standard. Whatever level you enter at, the expectation is the same: show up, do the work, get better." />
+
+<!-- ============================================================ PROGRAM CARDS ============================================================ -->
+<section class="programs-section">
+  <div class="container">
+    <div class="programs-grid">
+
+      @for (program of programs; track program.number; let i = $index) {
+        <article class="program-card" appAnimateOnScroll [delay]="i * 100">
+
+          <div class="program-card__header">
+            <span class="program-card__number">{{ program.number }}</span>
+            <span class="program-card__price">{{ program.price }}</span>
+          </div>
+
+          <h2 class="program-card__name">{{ program.name }}</h2>
+          <p class="program-card__tagline">{{ program.tagline }}</p>
+          <p class="program-card__description">{{ program.description }}</p>
+
+          <ul class="program-card__detail">
+            @for (item of program.detail; track item) {
+              <li class="program-card__detail-item">
+                <span class="program-card__check" aria-hidden="true">—</span>
+                {{ item }}
+              </li>
+            }
+          </ul>
+
+          <a href="#signup" class="program-card__cta btn btn--outline-gold">
+            Enquire About This Program
+          </a>
+
+        </article>
+      }
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ GLOFOX BOOKING ============================================================ -->
+<section class="booking" id="schedule">
+
+  <div class="booking__header container" appAnimateOnScroll>
+    <p class="section-label">Schedule</p>
+    <h2 class="booking__heading">BOOK A SESSION</h2>
+    <p class="booking__subtext">
+      Browse available sessions and reserve your spot directly below.
+      All bookings are confirmed instantly.
+    </p>
+  </div>
+
+  <div class="booking__frame-wrap">
+    <iframe
+      src="https://app.glofox.com/portal/#/branch/6998c391abe29d56820646da/classes-day-view"
+      title="Haven — Book a Session via Glofox"
+      width="100%"
+      height="1200"
+      loading="lazy"
+      style="border: none; display: block;">
+    </iframe>
+    <div class="booking__attribution">
+      <a href="https://www.glofox.com" target="_blank" rel="noopener noreferrer">
+        Booking powered by <strong>Glofox</strong>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ SIGN-UP FORM ============================================================ -->
+<section class="signup" id="signup">
+  <div class="container">
+    <div class="signup__grid">
+
+      <!-- Left: Info -->
+      <div class="signup__info" appAnimateOnScroll>
+        <p class="section-label">Request Access</p>
+        <h2 class="signup__heading">LET'S TALK</h2>
+        <p class="signup__body">
+          Haven operates on a membership basis. All new members begin with a
+          private consultation — no commitment required.
+        </p>
+        <p class="signup__body">
+          Complete the form and a coach will be in touch within 24 hours.
+        </p>
+
+        <div class="signup__contact-item">
+          <span class="signup__contact-label">Email</span>
+          <a href="mailto:hello@havenperformance.com" class="signup__contact-value">
+            hello&#64;havenperformance.com
+          </a>
+        </div>
+        <div class="signup__contact-item">
+          <span class="signup__contact-label">Phone</span>
+          <span class="signup__contact-value">+44 (0) 000 000 0000</span>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="signup__form-wrapper" appAnimateOnScroll [delay]="100">
+
+        @if (submitted()) {
+          <div class="signup__success">
+            <span class="signup__success-icon" aria-hidden="true">✓</span>
+            <h3 class="signup__success-heading">Request Received</h3>
+            <p class="signup__success-body">
+              A member of the Haven team will be in touch within 24 hours.
+            </p>
+          </div>
+        } @else {
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="signup__form" novalidate>
+
+            <div class="form-group" [class.form-group--error]="hasError('name')">
+              <label class="form-label" for="name">Full Name *</label>
+              <input
+                id="name"
+                type="text"
+                class="form-input"
+                formControlName="name"
+                placeholder="Your name"
+                autocomplete="name">
+              @if (hasError('name')) {
+                <span class="form-error">Please enter your name</span>
+              }
+            </div>
+
+            <div class="form-group" [class.form-group--error]="hasError('email')">
+              <label class="form-label" for="email">Email Address *</label>
+              <input
+                id="email"
+                type="email"
+                class="form-input"
+                formControlName="email"
+                placeholder="your@email.com"
+                autocomplete="email">
+              @if (hasError('email')) {
+                <span class="form-error">Please enter a valid email address</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input
+                id="phone"
+                type="tel"
+                class="form-input"
+                formControlName="phone"
+                placeholder="+44 (0) 000 000 0000"
+                autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="program">Program of Interest</label>
+              <select id="program" class="form-input form-select" formControlName="program">
+                <option value="personal">Personal Training</option>
+                <option value="group">Performance Group</option>
+                <option value="elite">Elite Program</option>
+                <option value="unsure">Not Sure — Let's Talk</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea
+                id="message"
+                class="form-input form-textarea"
+                formControlName="message"
+                placeholder="Tell us about your goals, current training, or any questions you have..."
+                rows="4">
+              </textarea>
+            </div>
+
+            <button type="submit" class="btn btn--gold signup__submit" [disabled]="submitting()">
+              @if (submitting()) {
+                Sending&hellip;
+              } @else {
+                Request Access &rarr;
+              }
+            </button>
+
+          </form>
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

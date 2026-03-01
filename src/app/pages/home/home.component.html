@@ -1,0 +1,79 @@
+<app-hero />
+
+<!-- ============================================================ PHILOSOPHY ============================================================ -->
+<section class="philosophy" id="about">
+  <div class="container">
+    <div class="philosophy__grid">
+
+      <div class="philosophy__left" appAnimateOnScroll>
+        <p class="section-label">The Standard</p>
+      </div>
+
+      <div class="philosophy__right">
+        <p class="philosophy__statement" appAnimateOnScroll [delay]="80">
+          Most facilities train the masses.<br>
+          We train the committed.
+        </p>
+        <p class="philosophy__body" appAnimateOnScroll [delay]="160">
+          Haven was built for athletes who demand more from their environment,
+          their coaches, and themselves. Every session is intentional. Every member
+          is known by name. There are no crowded floors, no distraction, no compromise.
+        </p>
+        <a routerLink="/gym" class="philosophy__link" appAnimateOnScroll [delay]="240">
+          Explore the facility
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TRAINING PILLARS ============================================================ -->
+<section class="pillars" id="training">
+  <div class="container">
+    <p class="section-label" appAnimateOnScroll>How We Train</p>
+    <div class="pillars__grid">
+
+      <div class="pillar" appAnimateOnScroll [delay]="0">
+        <span class="pillar__number">I</span>
+        <h3 class="pillar__title">Strength</h3>
+        <p class="pillar__body">
+          Foundational lifting protocols built around your physiology,
+          not a template.
+        </p>
+      </div>
+
+      <div class="pillar" appAnimateOnScroll [delay]="100">
+        <span class="pillar__number">II</span>
+        <h3 class="pillar__title">Conditioning</h3>
+        <p class="pillar__body">
+          Metabolic training calibrated to your output capacity
+          and recovery data.
+        </p>
+      </div>
+
+      <div class="pillar" appAnimateOnScroll [delay]="200">
+        <span class="pillar__number">III</span>
+        <h3 class="pillar__title">Recovery</h3>
+        <p class="pillar__body">
+          Guided mobility, breathing protocols, and periodised rest
+          built into every plan.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MANIFESTO ============================================================ -->
+<section class="manifesto" appAnimateOnScroll>
+  <div class="container">
+    <blockquote class="manifesto__quote">
+      The best training environment in the world is one where excellence
+      is the only acceptable standard.
+    </blockquote>
+    <cite class="manifesto__cite">Haven &mdash; est. 2024</cite>
+    <a routerLink="/classes" class="btn btn--gold manifesto__cta">Request Access</a>
+  </div>
+</section>

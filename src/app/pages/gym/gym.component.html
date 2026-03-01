@@ -1,0 +1,126 @@
+<app-page-hero
+  label="The Space"
+  title="AN ENVIRONMENT BUILT FOR EXCELLENCE"
+  description="Every square foot of Haven was designed with a single purpose: to remove every obstacle between you and your best performance." />
+
+<!-- ============================================================ VIDEO HERO ============================================================ -->
+<section class="gym-video">
+  <div class="media-placeholder media-placeholder--video gym-video__placeholder">
+    <div class="media-placeholder__label">
+      <div class="media-placeholder__icon">&#9654;</div>
+      <p class="media-placeholder__text">Facility Tour</p>
+      <p class="media-placeholder__meta">Video · 16:9 · Replace with client asset</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ OVERVIEW ============================================================ -->
+<section class="gym-overview">
+  <div class="container">
+    <div class="gym-overview__grid">
+
+      <div class="gym-overview__content" appAnimateOnScroll>
+        <p class="section-label">The Standard</p>
+        <h2 class="gym-overview__heading">NOTHING IS LEFT TO CHANCE</h2>
+        <p class="gym-overview__body">
+          The equipment was selected for performance, not aesthetics. The layout was
+          engineered for flow. The lighting was calibrated for focus. From the moment
+          you walk in, every detail signals the same thing: this place is serious.
+        </p>
+        <p class="gym-overview__body">
+          Haven operates at full capacity with a maximum of 12 members per session —
+          because the standard only holds when there is space to maintain it.
+        </p>
+      </div>
+
+      <div class="gym-overview__stats" appAnimateOnScroll [delay]="120">
+        <div class="stat">
+          <span class="stat__value">3,200</span>
+          <span class="stat__unit">sq ft</span>
+          <span class="stat__label">Private Training Floor</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">12</span>
+          <span class="stat__unit">max</span>
+          <span class="stat__label">Members Per Session</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">100%</span>
+          <span class="stat__unit"></span>
+          <span class="stat__label">Coach-Led, Always</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ GALLERY ============================================================ -->
+<section class="gym-gallery">
+  <div class="container">
+    <p class="section-label" appAnimateOnScroll>The Facility</p>
+    <div class="gallery-grid">
+
+      <div class="gallery-grid__primary" appAnimateOnScroll [delay]="0">
+        <div class="media-placeholder gallery-img">
+          <div class="media-placeholder__label">
+            <p class="media-placeholder__text">Training Floor</p>
+            <p class="media-placeholder__meta">Photo · 4:3 · Replace with client asset</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-grid__secondary">
+        <div class="media-placeholder gallery-img" appAnimateOnScroll [delay]="80">
+          <div class="media-placeholder__label">
+            <p class="media-placeholder__text">Lifting Platform</p>
+            <p class="media-placeholder__meta">Photo · 1:1</p>
+          </div>
+        </div>
+        <div class="media-placeholder gallery-img" appAnimateOnScroll [delay]="160">
+          <div class="media-placeholder__label">
+            <p class="media-placeholder__text">Recovery Suite</p>
+            <p class="media-placeholder__meta">Photo · 1:1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-grid__wide" appAnimateOnScroll [delay]="80">
+        <div class="media-placeholder gallery-img">
+          <div class="media-placeholder__label">
+            <p class="media-placeholder__text">Consultation Room</p>
+            <p class="media-placeholder__meta">Photo · 16:9 · Replace with client asset</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ AMENITIES ============================================================ -->
+<section class="gym-amenities">
+  <div class="container">
+    <p class="section-label" appAnimateOnScroll>What's Included</p>
+    <div class="amenities-grid">
+      @for (item of amenities; track item.label; let i = $index) {
+        <div class="amenity" appAnimateOnScroll [delay]="i * 60">
+          <div class="amenity__header">
+            <h3 class="amenity__label">{{ item.label }}</h3>
+            <span class="amenity__detail">{{ item.detail }}</span>
+          </div>
+          <div class="amenity__rule"></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA ============================================================ -->
+<section class="gym-cta" appAnimateOnScroll>
+  <div class="container">
+    <h2 class="gym-cta__heading">READY TO SEE IT IN PERSON?</h2>
+    <p class="gym-cta__body">Schedule a private tour. No commitment required.</p>
+    <a routerLink="/classes" class="btn btn--gold">Book a Tour</a>
+  </div>
+</section>

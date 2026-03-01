@@ -1,0 +1,395 @@
+:host {
+  display: block;
+  animation: page-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+// ============================================================
+// Glofox Booking
+// ============================================================
+.booking {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+
+  &__header {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-block: var(--space-lg) var(--space-md);
+  }
+
+  &__subtext {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-secondary);
+    max-width: 52ch;
+  }
+
+  // Full-bleed iframe wrapper — no container padding so the portal gets maximum width
+  &__frame-wrap {
+    width: 100%;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background-color: #fff; // Glofox portal renders on white; this avoids flash
+    overflow-x: auto;       // graceful fallback if portal isn't fully responsive
+
+    iframe {
+      min-height: 700px;
+
+      @media (max-width: 768px) {
+        min-height: 900px;
+      }
+    }
+  }
+
+  &__attribution {
+    padding: var(--space-sm) var(--gutter);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    text-align: right;
+
+    a {
+      font-size: var(--text-xs);
+      font-weight: 400;
+      letter-spacing: var(--tracking-wide);
+      color: var(--color-text-muted);
+      transition: color var(--dur-fast) var(--ease-out);
+
+      &:hover { color: var(--color-text-secondary); }
+
+      strong {
+        font-weight: 600;
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+}
+
+// ============================================================
+// Programs Grid
+// ============================================================
+.programs-section {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ============================================================
+// Program Card
+// ============================================================
+.program-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) var(--space-lg);
+  border-right: 1px solid var(--color-border);
+  position: relative;
+  transition: background-color var(--dur-base) var(--ease-out);
+
+  &:first-child { padding-left: 0; }
+  &:last-child  { border-right: none; padding-right: 0; }
+
+  @media (max-width: 900px) {
+    padding: var(--space-xl) 0;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    &:last-child { border-bottom: none; }
+  }
+
+  // Gold top accent bar on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-dim) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  &:hover::before { transform: scaleX(1); }
+  &:hover { background-color: rgba(245, 242, 238, 0.015); }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+  }
+
+  &__number {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-gold);
+  }
+
+  &__price {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  &__tagline {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+  }
+
+  &__description {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    flex: 1;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xl);
+  }
+
+  &__detail-item {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-secondary);
+  }
+
+  &__check {
+    color: var(--color-gold);
+    flex-shrink: 0;
+  }
+
+  &__cta {
+    margin-top: auto;
+    width: 100%;
+  }
+}
+
+// ============================================================
+// Sign-up Section
+// ============================================================
+.signup {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-2xl);
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-block: var(--space-lg);
+  }
+
+  &__body {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.85;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  &__contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    margin-top: var(--space-lg);
+  }
+
+  &__contact-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  &__contact-value {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &:hover { color: var(--color-gold); }
+  }
+
+  &__submit {
+    width: 100%;
+    padding-block: 1rem;
+    margin-top: var(--space-md);
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  // Success state
+  &__success {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-2xl);
+    border: 1px solid var(--color-gold-dim);
+    background-color: rgba(168, 159, 122, 0.04);
+  }
+
+  &__success-icon {
+    font-size: var(--text-xl);
+    color: var(--color-gold);
+  }
+
+  &__success-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  &__success-body {
+    font-size: var(--text-sm);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    letter-spacing: var(--tracking-wide);
+  }
+}
+
+// ============================================================
+// Form Elements
+// ============================================================
+.signup__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+
+  &--error {
+    .form-input { border-color: rgba(200, 80, 80, 0.5); }
+    .form-label { color: rgba(200, 80, 80, 0.8); }
+  }
+}
+
+.form-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-mid);
+  border-radius: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  outline: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+  appearance: none;
+  -webkit-appearance: none;
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:focus {
+    border-color: var(--color-gold-dim);
+    background-color: rgba(168, 159, 122, 0.03);
+    box-shadow: 0 0 0 1px var(--color-gold-dim);
+  }
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A89F7A' stroke-width='1.5' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+
+  option {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+  }
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(200, 80, 80, 0.85);
+}

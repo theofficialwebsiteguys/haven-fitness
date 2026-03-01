@@ -1,0 +1,239 @@
+:host {
+  display: block;
+  animation: page-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+// ============================================================
+// Video Hero
+// ============================================================
+.gym-video {
+  &__placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    min-height: 320px;
+
+    @media (max-width: 768px) {
+      aspect-ratio: 16 / 9;
+    }
+  }
+}
+
+// ============================================================
+// Overview
+// ============================================================
+.gym-overview {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 0.95;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-block: var(--space-lg);
+  }
+
+  &__body {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.85;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-secondary);
+    max-width: 54ch;
+    margin-bottom: var(--space-md);
+  }
+}
+
+.stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--space-xs);
+  align-items: baseline;
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+
+  &:first-child { border-top: 1px solid var(--color-border); }
+
+  &__value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-primary);
+    grid-row: 1;
+  }
+
+  &__unit {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--color-gold);
+    grid-row: 1;
+    align-self: flex-end;
+  }
+
+  &__label {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-top: var(--space-2xs);
+  }
+}
+
+// ============================================================
+// Gallery
+// ============================================================
+.gym-gallery {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+
+  .section-label { margin-bottom: var(--space-xl); }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-xs);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__primary {
+    grid-column: 1;
+    grid-row: 1;
+
+    .gallery-img { aspect-ratio: 4 / 3; }
+  }
+
+  &__secondary {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--space-xs);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .gallery-img { aspect-ratio: 1; }
+  }
+
+  &__wide {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    .gallery-img { aspect-ratio: 21 / 7; min-height: 200px; }
+
+    @media (max-width: 768px) {
+      .gallery-img { aspect-ratio: 16 / 7; }
+    }
+  }
+}
+
+.gallery-img {
+  width: 100%;
+  transition: opacity var(--dur-base) var(--ease-out);
+  &:hover { opacity: 0.85; }
+}
+
+// ============================================================
+// Amenities
+// ============================================================
+.gym-amenities {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+
+  .section-label { margin-bottom: var(--space-xl); }
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 var(--space-2xl);
+
+  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 560px) { grid-template-columns: 1fr; }
+}
+
+.amenity {
+  padding-block: var(--space-md);
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  &__label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-primary);
+  }
+
+  &__detail {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  &__rule {
+    height: 1px;
+    background-color: var(--color-border);
+  }
+}
+
+// ============================================================
+// CTA
+// ============================================================
+.gym-cta {
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  text-align: center;
+
+  &__heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  &__body {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-xl);
+  }
+}

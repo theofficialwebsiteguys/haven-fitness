@@ -1,0 +1,79 @@
+<app-page-hero
+  label="Our Coaches"
+  title="TRAINED BY THE BEST"
+  description="Every Haven coach is selected not just for their credentials, but for their philosophy. They believe in the same thing you do: that serious results require serious environments." />
+
+<!-- ============================================================ TRAINERS GRID ============================================================ -->
+<section class="trainers-section">
+  <div class="container">
+    <div class="trainers-grid">
+
+      @for (trainer of trainers; track trainer.name; let i = $index) {
+        <article class="trainer-card" appAnimateOnScroll [delay]="i * 100">
+
+          <!-- Photo placeholder -->
+          <div class="trainer-card__photo">
+            <div class="media-placeholder" [style.aspect-ratio]="trainer.photoRatio">
+              <div class="media-placeholder__label">
+                <p class="media-placeholder__text">{{ trainer.photoAlt }}</p>
+                <p class="media-placeholder__meta">Photo · 3:4 · Replace with client asset</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="trainer-card__info">
+            <span class="trainer-card__role">{{ trainer.role }}</span>
+            <h2 class="trainer-card__name">{{ trainer.name }}</h2>
+            <p class="trainer-card__bio">{{ trainer.bio }}</p>
+
+            <div class="trainer-card__specialties">
+              @for (spec of trainer.specialties; track spec) {
+                <span class="tag">{{ spec }}</span>
+              }
+            </div>
+          </div>
+
+        </article>
+      }
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PHILOSOPHY STRIP ============================================================ -->
+<section class="trainers-philosophy" appAnimateOnScroll>
+  <div class="container">
+    <div class="trainers-philosophy__grid">
+      <div>
+        <p class="section-label">Our Approach</p>
+      </div>
+      <div>
+        <p class="trainers-philosophy__statement">
+          A great coach doesn't train everyone the same way. They train each athlete
+          the right way — building a system that works for that individual's body,
+          schedule, and ambition.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA ============================================================ -->
+<section class="trainers-cta" appAnimateOnScroll>
+  <div class="container">
+    <div class="trainers-cta__inner">
+      <div>
+        <h2 class="trainers-cta__heading">READY TO START?</h2>
+        <p class="trainers-cta__body">
+          Every membership begins with a private consultation with your coach.
+          No groups. No guesswork.
+        </p>
+      </div>
+      <div class="trainers-cta__actions">
+        <a routerLink="/classes" class="btn btn--gold">Book a Consultation</a>
+        <a routerLink="/classes" class="btn btn--ghost">View Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
