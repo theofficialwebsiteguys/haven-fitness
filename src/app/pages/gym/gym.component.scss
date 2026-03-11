@@ -7,10 +7,13 @@
 // Video Hero
 // ============================================================
 .gym-video {
-  &__placeholder {
+  &__player {
     width: 100%;
     aspect-ratio: 16 / 7;
     min-height: 320px;
+    object-fit: cover;
+    display: block;
+    background-color: var(--color-surface);
 
     @media (max-width: 768px) {
       aspect-ratio: 16 / 9;
@@ -145,19 +148,25 @@
   &__wide {
     grid-column: 1 / -1;
     grid-row: 2;
-
-    .gallery-img { aspect-ratio: 21 / 7; min-height: 200px; }
-
-    @media (max-width: 768px) {
-      .gallery-img { aspect-ratio: 16 / 7; }
-    }
   }
 }
 
 .gallery-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: opacity var(--dur-base) var(--ease-out);
   &:hover { opacity: 0.85; }
+
+  &--wide {
+    aspect-ratio: 21 / 7;
+    min-height: 200px;
+
+    @media (max-width: 768px) {
+      aspect-ratio: 16 / 7;
+    }
+  }
 }
 
 // ============================================================

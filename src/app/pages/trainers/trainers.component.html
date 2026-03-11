@@ -11,14 +11,9 @@
       @for (trainer of trainers; track trainer.name; let i = $index) {
         <article class="trainer-card" appAnimateOnScroll [delay]="i * 100">
 
-          <!-- Photo placeholder -->
+          <!-- Photo -->
           <div class="trainer-card__photo">
-            <div class="media-placeholder" [style.aspect-ratio]="trainer.photoRatio">
-              <div class="media-placeholder__label">
-                <p class="media-placeholder__text">{{ trainer.photoAlt }}</p>
-                <p class="media-placeholder__meta">Photo · 3:4 · Replace with client asset</p>
-              </div>
-            </div>
+            <img [src]="trainer.photoSrc" [alt]="trainer.name + ' — ' + trainer.role" class="trainer-card__img" loading="lazy">
           </div>
 
           <!-- Info -->

@@ -5,13 +5,9 @@
 
 <!-- ============================================================ VIDEO HERO ============================================================ -->
 <section class="gym-video">
-  <div class="media-placeholder media-placeholder--video gym-video__placeholder">
-    <div class="media-placeholder__label">
-      <div class="media-placeholder__icon">&#9654;</div>
-      <p class="media-placeholder__text">Facility Tour</p>
-      <p class="media-placeholder__meta">Video · 16:9 · Replace with client asset</p>
-    </div>
-  </div>
+  <video class="gym-video__player" controls preload="metadata" poster="assets/1.jpg" aria-label="Haven Fitness — Facility Tour">
+    <source src="assets/video.mp4" type="video/mp4">
+  </video>
 </section>
 
 <!-- ============================================================ OVERVIEW ============================================================ -->
@@ -62,36 +58,16 @@
     <div class="gallery-grid">
 
       <div class="gallery-grid__primary" appAnimateOnScroll [delay]="0">
-        <div class="media-placeholder gallery-img">
-          <div class="media-placeholder__label">
-            <p class="media-placeholder__text">Training Floor</p>
-            <p class="media-placeholder__meta">Photo · 4:3 · Replace with client asset</p>
-          </div>
-        </div>
+        <img src="assets/1.jpg" alt="Haven — Training Floor" class="gallery-img" loading="lazy">
       </div>
 
       <div class="gallery-grid__secondary">
-        <div class="media-placeholder gallery-img" appAnimateOnScroll [delay]="80">
-          <div class="media-placeholder__label">
-            <p class="media-placeholder__text">Lifting Platform</p>
-            <p class="media-placeholder__meta">Photo · 1:1</p>
-          </div>
-        </div>
-        <div class="media-placeholder gallery-img" appAnimateOnScroll [delay]="160">
-          <div class="media-placeholder__label">
-            <p class="media-placeholder__text">Recovery Suite</p>
-            <p class="media-placeholder__meta">Photo · 1:1</p>
-          </div>
-        </div>
+        <img src="assets/2.jpg" alt="Haven — Lifting Platform" class="gallery-img" appAnimateOnScroll [delay]="80" loading="lazy">
+        <img src="assets/3.jpg" alt="Haven — Recovery Suite" class="gallery-img" appAnimateOnScroll [delay]="160" loading="lazy">
       </div>
 
       <div class="gallery-grid__wide" appAnimateOnScroll [delay]="80">
-        <div class="media-placeholder gallery-img">
-          <div class="media-placeholder__label">
-            <p class="media-placeholder__text">Consultation Room</p>
-            <p class="media-placeholder__meta">Photo · 16:9 · Replace with client asset</p>
-          </div>
-        </div>
+        <img src="assets/4.jpg" alt="Haven — Facility Overview" class="gallery-img gallery-img--wide" loading="lazy">
       </div>
 
     </div>

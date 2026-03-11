@@ -1,5 +1,24 @@
 <section class="hero" aria-labelledby="hero-headline">
 
+  <!-- Background video (decorative, hidden from assistive tech) -->
+  <div class="hero__video-wrap" aria-hidden="true">
+    <video
+      #heroVideo
+      class="hero__video"
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="assets/hero-poster.jpg"
+      (loadeddata)="startVideo()"
+    >
+      <source src="assets/video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Dark overlay for readability -->
+  <div class="hero__overlay" aria-hidden="true"></div>
+
   <div class="hero__ambient" aria-hidden="true"></div>
 
   <!-- Main content -->
@@ -8,7 +27,7 @@
 
       <p class="hero__eyebrow">
         <span class="hero__eyebrow-rule" aria-hidden="true"></span>
-        Private Performance Training &mdash; By Invitation
+        Private Performance Training &mdash; Based in Paramus, NJ
       </p>
 
       <h1 class="hero__headline" id="hero-headline">

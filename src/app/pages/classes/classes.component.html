@@ -3,43 +3,6 @@
   title="CHOOSE YOUR PATH"
   description="Three programs. One standard. Whatever level you enter at, the expectation is the same: show up, do the work, get better." />
 
-<!-- ============================================================ PROGRAM CARDS ============================================================ -->
-<section class="programs-section">
-  <div class="container">
-    <div class="programs-grid">
-
-      @for (program of programs; track program.number; let i = $index) {
-        <article class="program-card" appAnimateOnScroll [delay]="i * 100">
-
-          <div class="program-card__header">
-            <span class="program-card__number">{{ program.number }}</span>
-            <span class="program-card__price">{{ program.price }}</span>
-          </div>
-
-          <h2 class="program-card__name">{{ program.name }}</h2>
-          <p class="program-card__tagline">{{ program.tagline }}</p>
-          <p class="program-card__description">{{ program.description }}</p>
-
-          <ul class="program-card__detail">
-            @for (item of program.detail; track item) {
-              <li class="program-card__detail-item">
-                <span class="program-card__check" aria-hidden="true">—</span>
-                {{ item }}
-              </li>
-            }
-          </ul>
-
-          <a href="#signup" class="program-card__cta btn btn--outline-gold">
-            Enquire About This Program
-          </a>
-
-        </article>
-      }
-
-    </div>
-  </div>
-</section>
-
 <!-- ============================================================ GLOFOX BOOKING ============================================================ -->
 <section class="booking" id="schedule">
 
