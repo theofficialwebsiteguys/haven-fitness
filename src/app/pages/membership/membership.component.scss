@@ -1,0 +1,502 @@
+:host {
+  display: block;
+  animation: page-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+// ============================================================
+// Hero
+// ============================================================
+.mem-hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: -10% 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: grayscale(15%) brightness(0.60);
+    z-index: 0;
+
+    @media (max-width: 768px) {
+      inset: 0;
+      background-attachment: scroll;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.94) 100%
+    );
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding-top: calc(72px + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
+  }
+
+  &__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    animation: fade-slide-up 0.8s var(--ease-out) 0.1s both;
+  }
+
+  &__rule {
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background-color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  &__headline {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 15vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-lg);
+    animation: fade-slide-up 0.9s var(--ease-out) 0.2s both;
+  }
+
+  &__subtext {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    max-width: 44ch;
+    animation: fade-slide-up 0.9s var(--ease-out) 0.35s both;
+  }
+}
+
+// ============================================================
+// Membership Tiers
+// ============================================================
+.tiers {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+
+  .section-label {
+    margin-bottom: var(--space-xl);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  transition: background-color var(--dur-base) var(--ease-out);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: 900px) {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-xl) 0;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-xl);
+  }
+
+  &__number {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-text-muted);
+  }
+
+  &__badge {
+    font-family: var(--font-body);
+    font-size: var(--text-2xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: #000000;
+    background: #ffffff;
+    padding: 0.2rem 0.6rem;
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 5vw, 5rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-bottom: 0;
+  }
+
+  &__rule {
+    width: 2rem;
+    height: 1px;
+    background-color: var(--color-border-mid);
+    margin-block: var(--space-lg);
+    flex-shrink: 0;
+  }
+
+  &__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  &__detail {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    flex: 1;
+    margin-bottom: var(--space-xl);
+  }
+
+  &__btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  // — Featured variant (Hybrid) — white card
+  &--featured {
+    background-color: #ffffff;
+    border-color: #ffffff;
+
+    .tier__number { color: rgba(0, 0, 0, 0.35); }
+    .tier__name   { color: #000000; }
+    .tier__rule   { background-color: rgba(0, 0, 0, 0.15); }
+    .tier__desc   { color: #000000; }
+    .tier__detail { color: rgba(0, 0, 0, 0.55); }
+  }
+
+  &__btn--featured {
+    background: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color var(--dur-fast) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      background: #222222;
+      border-color: #222222;
+    }
+  }
+}
+
+// ============================================================
+// Image Banner
+// ============================================================
+.mem-banner {
+  position: relative;
+  height: clamp(380px, 50vh, 640px);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, #000000 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: -10% 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: grayscale(18%) brightness(0.72);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      inset: 0;
+      background-attachment: scroll;
+    }
+  }
+}
+
+// ============================================================
+// Why Members Love Haven
+// ============================================================
+.why {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+
+  &__header {
+    margin-bottom: var(--space-2xl);
+
+    .section-label { margin-bottom: var(--space-lg); }
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  &__list {
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+
+    @media (max-width: 600px) {
+      grid-template-columns: 3rem 1fr;
+      gap: var(--space-md);
+    }
+  }
+
+  &__index {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-text-muted);
+  }
+
+  &__text {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    line-height: 1.1;
+  }
+}
+
+// ============================================================
+// Cameron Lopez — Coach Section
+// ============================================================
+.coach {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__text {
+    .section-label { margin-bottom: var(--space-2xl); }
+  }
+
+  &__stat {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  &__stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 12vw, 12rem);
+    line-height: 0.85;
+    letter-spacing: 0.02em;
+    color: var(--color-text-primary);
+  }
+
+  &__stat-label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  &__bio {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.85;
+    color: var(--color-text-secondary);
+    max-width: 52ch;
+  }
+
+  &__image-wrap {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+
+    @media (max-width: 900px) {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    filter: grayscale(12%);
+    transform: scale(1.02);
+    transition: transform var(--dur-slow) var(--ease-out);
+
+    &:hover { transform: scale(1); }
+  }
+}
+
+// ============================================================
+// Final CTA — black on black, massive type
+// ============================================================
+.mem-cta {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+
+  &__headline {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 14vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2xl);
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn--schedule {
+    background: transparent;
+    border: 1px solid var(--color-border-mid);
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: border-color var(--dur-fast) var(--ease-out),
+                color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.30);
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__btn--join {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: background-color var(--dur-fast) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: rgba(255, 255, 255, 0.88);
+    }
+  }
+}

@@ -8,16 +8,15 @@
 
     <!-- Center links (desktop) -->
     <nav class="nav__links" aria-label="Primary navigation">
-      <a routerLink="/gym"      routerLinkActive="nav__link--active" class="nav__link">The Gym</a>
-      <a routerLink="/trainers" routerLinkActive="nav__link--active" class="nav__link">Trainers</a>
-      <a routerLink="/classes"  routerLinkActive="nav__link--active" class="nav__link">Programs</a>
-      <a href="mailto:hello@havenperformance.com"                    class="nav__link">Contact</a>
+      <a routerLink="/schedule"            routerLinkActive="nav__link--active" class="nav__link">Schedule</a>
+      <a routerLink="/membership"          routerLinkActive="nav__link--active" class="nav__link">Membership</a>
+      <a routerLink="/founding-membership" routerLinkActive="nav__link--active" class="nav__link">Founding Membership</a>
     </nav>
 
     <!-- Right CTAs (desktop) -->
     <div class="nav__actions">
-      <a routerLink="/classes" class="nav__btn nav__btn--ghost">Inquire</a>
-      <a routerLink="/classes" class="nav__btn nav__btn--gold">Membership</a>
+      <a routerLink="/contact"    class="nav__btn nav__btn--ghost">Contact</a>
+      <a routerLink="/membership" class="nav__btn nav__btn--gold">Join Now</a>
     </div>
 
     <!-- Mobile toggle -->
@@ -36,14 +35,14 @@
   <!-- Mobile drawer -->
   <div class="nav__drawer" [class.nav__drawer--open]="menuOpen()">
     <nav class="nav__drawer-links" aria-label="Mobile navigation">
-      <a routerLink="/"         [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Home</a>
-      <a routerLink="/gym"      routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">The Gym</a>
-      <a routerLink="/trainers" routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Trainers</a>
-      <a routerLink="/classes"  routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Programs</a>
+      <a routerLink="/"                    [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Home</a>
+      <a routerLink="/schedule"            routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Schedule</a>
+      <a routerLink="/membership"          routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Membership</a>
+      <a routerLink="/founding-membership" routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Founding Membership</a>
     </nav>
     <div class="nav__drawer-actions">
-      <a routerLink="/classes" class="nav__btn nav__btn--ghost" (click)="closeMenu()">Inquire</a>
-      <a routerLink="/classes" class="nav__btn nav__btn--gold"  (click)="closeMenu()">Membership</a>
+      <a routerLink="/contact"    class="nav__btn nav__btn--ghost" (click)="closeMenu()">Contact</a>
+      <a routerLink="/membership" class="nav__btn nav__btn--gold"  (click)="closeMenu()">Join Now</a>
     </div>
   </div>
 </header>

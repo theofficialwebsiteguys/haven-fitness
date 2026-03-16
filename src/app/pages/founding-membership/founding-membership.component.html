@@ -1,0 +1,314 @@
+<!-- ============================================================
+     ALERT TICKER
+============================================================ -->
+<div class="fm-ticker" aria-label="Founding membership alert">
+  <div class="fm-ticker__track">
+    <span class="fm-ticker__item"><span class="fm-ticker__dot" aria-hidden="true"></span>FOUNDING MEMBERSHIPS NOW OPEN</span>
+    <span class="fm-ticker__item" aria-hidden="true">·</span>
+    <span class="fm-ticker__item" aria-hidden="true">LIMITED TO 75 MEMBERS</span>
+    <span class="fm-ticker__item" aria-hidden="true">·</span>
+    <span class="fm-ticker__item" aria-hidden="true">RATES LOCK IN FOR LIFE</span>
+    <span class="fm-ticker__item" aria-hidden="true">·</span>
+    <span class="fm-ticker__item" aria-hidden="true"><span class="fm-ticker__dot"></span>FOUNDING MEMBERSHIPS NOW OPEN</span>
+    <span class="fm-ticker__item" aria-hidden="true">·</span>
+    <span class="fm-ticker__item" aria-hidden="true">LIMITED TO 75 MEMBERS</span>
+    <span class="fm-ticker__item" aria-hidden="true">·</span>
+    <span class="fm-ticker__item" aria-hidden="true">RATES LOCK IN FOR LIFE</span>
+    <span class="fm-ticker__item" aria-hidden="true">·</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="fm-hero">
+  <div class="fm-hero__bg" style="background-image: url('assets/9.jpg')"></div>
+  <div class="fm-hero__overlay"></div>
+  <div class="fm-hero__content container">
+
+    <div class="fm-hero__status">
+      <span class="fm-hero__status-dot" aria-hidden="true"></span>
+      <span>Now Open — 75 Spots</span>
+    </div>
+
+    <h1 class="fm-hero__headline">FOUNDING<br>MEMBERSHIP</h1>
+
+    <p class="fm-hero__subtext">
+      Limited to 75 total members. Once these memberships are filled,
+      founding rates will no longer be available.
+    </p>
+
+    <a href="#founding-options" class="btn btn--gold">Join Founding Membership</a>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FOUNDING INTRO
+============================================================ -->
+<section class="fm-intro">
+  <div class="container">
+    <div class="fm-intro__grid">
+
+      <div class="fm-intro__left" appAnimateOnScroll>
+        <p class="section-label">The Opportunity</p>
+        <div class="fm-intro__stat">
+          <span class="fm-intro__stat-number">75</span>
+          <span class="fm-intro__stat-label">Total<br>Members</span>
+        </div>
+      </div>
+
+      <div class="fm-intro__right" appAnimateOnScroll [delay]="100">
+        <p class="fm-intro__statement">
+          To celebrate the launch of HAVEN Fit Club, we are offering a limited number
+          of founding memberships with preferred pricing that will be locked in
+          for active members.
+        </p>
+        <p class="fm-intro__body">
+          Once these memberships are filled, founding rates will no longer be available.
+          This is a one-time opportunity to secure your rate and become part of Haven
+          from the very beginning.
+        </p>
+        <a href="#founding-options" class="btn btn--ghost">View Founding Rates</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     IMAGE BANNER
+============================================================ -->
+<div class="fm-banner" aria-hidden="true">
+  <div class="fm-banner__bg" style="background-image: url('assets/8.jpg')"></div>
+</div>
+
+<!-- ============================================================
+     FOUNDING MEMBERSHIP OPTIONS
+============================================================ -->
+<section class="founding-options" id="founding-options">
+  <div class="container">
+
+    <div class="founding-options__header" appAnimateOnScroll>
+      <p class="section-label">Founding Membership Options</p>
+      <h2 class="founding-options__heading">LOCK IN<br>YOUR RATE.</h2>
+      <div class="founding-options__urgency">
+        <span class="founding-options__urgency-dot" aria-hidden="true"></span>
+        <span>Limited to 75 members — Class &amp; Hybrid combined. Once filled, these rates are gone.</span>
+      </div>
+    </div>
+
+    <div class="founding-options__groups">
+
+      <!-- Class Memberships -->
+      <div class="tier-group" appAnimateOnScroll [delay]="0">
+        <div class="tier-group__header">
+          <h3 class="tier-group__name">Unlimited Class</h3>
+          <p class="tier-group__desc">1 class per day, unlimited access</p>
+        </div>
+        <div class="tier-group__cards">
+          <div class="price-card">
+            <span class="price-card__tier">Tier 1</span>
+            <span class="price-card__price">$159<span class="price-card__per">/mo</span></span>
+            <p class="price-card__feature">Unlimited classes (1 per day)</p>
+          </div>
+          <div class="price-card">
+            <span class="price-card__tier">Tier 2</span>
+            <span class="price-card__price">$179<span class="price-card__per">/mo</span></span>
+            <p class="price-card__feature">Unlimited classes (1 per day)</p>
+          </div>
+          <div class="price-card">
+            <span class="price-card__tier">Tier 3</span>
+            <span class="price-card__price">$199<span class="price-card__per">/mo</span></span>
+            <p class="price-card__feature">Unlimited classes (1 per day)</p>
+          </div>
+        </div>
+        <a href="#" class="btn btn--ghost tier-group__cta">Get Started</a>
+      </div>
+
+      <!-- Hybrid Memberships — featured -->
+      <div class="tier-group tier-group--featured" appAnimateOnScroll [delay]="150">
+        <div class="tier-group__header">
+          <span class="tier-group__badge">Recommended</span>
+          <h3 class="tier-group__name">Hybrid</h3>
+          <p class="tier-group__desc">Classes + semi-private sessions</p>
+        </div>
+        <div class="tier-group__cards">
+          <div class="price-card price-card--featured">
+            <span class="price-card__tier">Tier 1</span>
+            <span class="price-card__price">$259<span class="price-card__per">/mo</span></span>
+            <p class="price-card__feature">1 class/day + 1 semi-private/week</p>
+          </div>
+          <div class="price-card price-card--featured">
+            <span class="price-card__tier">Tier 2</span>
+            <span class="price-card__price">$279<span class="price-card__per">/mo</span></span>
+            <p class="price-card__feature">1 class/day + 1 semi-private/week</p>
+          </div>
+          <div class="price-card price-card--featured">
+            <span class="price-card__tier">Tier 3</span>
+            <span class="price-card__price">$299<span class="price-card__per">/mo</span></span>
+            <p class="price-card__feature">1 class/day + 1 semi-private/week</p>
+          </div>
+        </div>
+        <a href="#" class="btn tier-group__cta tier-group__cta--featured">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STANDARD MEMBERSHIPS
+============================================================ -->
+<section class="standard">
+  <div class="container">
+
+    <div class="standard__header" appAnimateOnScroll>
+      <p class="section-label">Standard Rates</p>
+      <h2 class="standard__heading">AVAILABLE ONCE<br>FOUNDING FILLS.</h2>
+      <p class="standard__note">
+        These rates become available after all founding memberships are claimed.
+      </p>
+    </div>
+
+    <div class="standard__grid">
+
+      <div class="standard__group" appAnimateOnScroll [delay]="0">
+        <h4 class="standard__group-name">Class</h4>
+        <div class="rate-row">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Class</span>
+            <span class="rate-row__detail">2 classes per week</span>
+          </div>
+          <span class="rate-row__price">$199/mo</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Class+</span>
+            <span class="rate-row__detail">Unlimited classes (1 per day)</span>
+          </div>
+          <span class="rate-row__price">$219/mo</span>
+        </div>
+      </div>
+
+      <div class="standard__group" appAnimateOnScroll [delay]="100">
+        <h4 class="standard__group-name">Guide</h4>
+        <div class="rate-row">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Guided</span>
+            <span class="rate-row__detail">2 semi-private sessions per week</span>
+          </div>
+          <span class="rate-row__price">$349/mo</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Guided+</span>
+            <span class="rate-row__detail">3 semi-private sessions per week</span>
+          </div>
+          <span class="rate-row__price">$399/mo</span>
+        </div>
+      </div>
+
+      <div class="standard__group" appAnimateOnScroll [delay]="200">
+        <h4 class="standard__group-name">Hybrid</h4>
+        <div class="rate-row">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Hybrid</span>
+            <span class="rate-row__detail">2 classes + 1 semi-private/week</span>
+          </div>
+          <span class="rate-row__price">$379/mo</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Hybrid+</span>
+            <span class="rate-row__detail">Unlimited classes + 1 semi-private/week</span>
+          </div>
+          <span class="rate-row__price">$429/mo</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DROP-IN & INTRO OFFER
+============================================================ -->
+<section class="single-visit">
+  <div class="container">
+    <div class="single-visit__groups">
+
+      <div class="single-visit__group" appAnimateOnScroll [delay]="0">
+        <h3 class="single-visit__name">Intro Offer</h3>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">First Class</span>
+          </div>
+          <span class="rate-row__price">$29</span>
+        </div>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Second Class</span>
+          </div>
+          <span class="rate-row__price">Free</span>
+        </div>
+      </div>
+
+      <div class="single-visit__group" appAnimateOnScroll [delay]="100">
+        <h3 class="single-visit__name">Drop-In</h3>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Single Class</span>
+          </div>
+          <span class="rate-row__price">$35</span>
+        </div>
+      </div>
+
+      <div class="single-visit__group" appAnimateOnScroll [delay]="200">
+        <h3 class="single-visit__name">Private Training</h3>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">Single Session</span>
+          </div>
+          <span class="rate-row__price">$60</span>
+        </div>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">4 Pack</span>
+            <span class="rate-row__detail">$55/session</span>
+          </div>
+          <span class="rate-row__price">$220</span>
+        </div>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">8 Pack</span>
+            <span class="rate-row__detail">$50/session</span>
+          </div>
+          <span class="rate-row__price">$400</span>
+        </div>
+        <div class="rate-row rate-row--light">
+          <div class="rate-row__left">
+            <span class="rate-row__name">12 Pack</span>
+            <span class="rate-row__detail">$45/session</span>
+          </div>
+          <span class="rate-row__price">$540</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section class="fm-cta" appAnimateOnScroll>
+  <div class="container">
+    <p class="section-label">75 Spots. No Extensions.</p>
+    <h2 class="fm-cta__headline">SECURE YOUR<br>RATE TODAY.</h2>
+    <div class="fm-cta__buttons">
+      <a href="#founding-options" class="btn fm-cta__btn--join">Join Founding Membership</a>
+      <a routerLink="/schedule" class="btn btn--ghost">View Schedule</a>
+    </div>
+  </div>
+</section>

@@ -13,27 +13,27 @@
 
 // --- DESIGN TOKENS ---
 :root {
-  // Colors — slightly warm dark (not harsh pure-black)
-  --color-bg:           #0D0C0B;
-  --color-bg-elevated:  #131110;
-  --color-surface:      #1C1917;
-  --color-border:       rgba(245, 242, 238, 0.08);
-  --color-border-mid:   rgba(245, 242, 238, 0.14);
+  // Colors — pure black & white
+  --color-bg:           #000000;
+  --color-bg-elevated:  #0A0A0A;
+  --color-surface:      #111111;
+  --color-border:       rgba(255, 255, 255, 0.08);
+  --color-border-mid:   rgba(255, 255, 255, 0.16);
 
-  // Text — significantly brightened for readability
-  --color-text-primary:   #F5F2EE;
-  --color-text-secondary: rgba(245, 242, 238, 0.70);
-  --color-text-muted:     rgba(245, 242, 238, 0.42);
+  // Text
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.68);
+  --color-text-muted:     rgba(255, 255, 255, 0.40);
 
-  // Gold accent
-  --color-gold:        #A89F7A;
-  --color-gold-light:  #C4B896;
-  --color-gold-dim:    rgba(168, 159, 122, 0.30);
-  --color-gold-dark:   #7A7355;
+  // White accent (replaces gold — keeps variable names for component compatibility)
+  --color-gold:        #FFFFFF;
+  --color-gold-light:  rgba(255, 255, 255, 0.90);
+  --color-gold-dim:    rgba(255, 255, 255, 0.15);
+  --color-gold-dark:   rgba(255, 255, 255, 0.55);
 
   // Typography
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', system-ui, sans-serif;
+  --font-body:    'Montserrat', system-ui, sans-serif;
 
   // Fluid Spacing Scale
   --space-2xs: 0.25rem;
@@ -50,13 +50,13 @@
   --gutter:    clamp(1.5rem, 5vw, 5rem);
 
   // Typography Scale
-  --text-2xs:  0.625rem;
-  --text-xs:   0.6875rem;
-  --text-sm:   0.8125rem;
-  --text-base: 1rem;
-  --text-lg:   1.125rem;
-  --text-xl:   1.375rem;
-  --text-2xl:  1.5rem;
+  --text-2xs:  0.75rem;
+  --text-xs:   0.875rem;
+  --text-sm:   1.0625rem;
+  --text-base: 1.25rem;
+  --text-lg:   1.5rem;
+  --text-xl:   1.875rem;
+  --text-2xl:  2.25rem;
 
   // Letter Spacing
   --tracking-tight:   -0.02em;
@@ -78,7 +78,7 @@ html {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -177,13 +177,13 @@ ul { list-style: none; }
     background: transparent;
     border: 1px solid var(--color-border-mid);
     color: var(--color-text-secondary);
-    &:hover { border-color: rgba(245, 242, 238, 0.30); color: var(--color-text-primary); }
+    &:hover { border-color: rgba(255, 255, 255, 0.30); color: var(--color-text-primary); }
   }
 
   &--gold {
     background: var(--color-gold);
     border: 1px solid var(--color-gold);
-    color: #0D0C0B;
+    color: #000000;
     &:hover { background: var(--color-gold-light); border-color: var(--color-gold-light); }
   }
 
@@ -208,7 +208,7 @@ ul { list-style: none; }
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent 50%, rgba(168, 159, 122, 0.05) 100%);
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.03) 100%);
   }
 
   &__label {
@@ -238,7 +238,7 @@ ul { list-style: none; }
   &__meta {
     font-size: var(--text-2xs);
     letter-spacing: var(--tracking-wide);
-    color: rgba(245, 242, 238, 0.22);
+    color: rgba(255, 255, 255, 0.22);
   }
 
   &--video {
@@ -258,7 +258,7 @@ ul { list-style: none; }
     }
     &:hover .media-placeholder__icon {
       border-color: var(--color-gold);
-      background-color: rgba(168, 159, 122, 0.08);
+      background-color: rgba(255, 255, 255, 0.06);
     }
   }
 }

@@ -1,0 +1,88 @@
+<app-page-hero
+  label="Contact"
+  title="GET IN TOUCH"
+  description="Questions about membership or training? We'll get back to you within 24 hours." />
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-section__grid">
+
+      <!-- Left: Info -->
+      <div class="contact-section__info" appAnimateOnScroll>
+        <p class="section-label">Reach Us</p>
+        <div class="contact-section__item">
+          <span class="contact-section__label">Email</span>
+          <a href="mailto:hello@havenperformance.com" class="contact-section__value">
+            hello&#64;havenperformance.com
+          </a>
+        </div>
+        <div class="contact-section__item">
+          <span class="contact-section__label">Location</span>
+          <span class="contact-section__value">Paramus, NJ</span>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-section__form-wrap" appAnimateOnScroll [delay]="100">
+
+        @if (submitted()) {
+          <div class="contact-section__success">
+            <span class="contact-section__success-icon" aria-hidden="true">✓</span>
+            <h3 class="contact-section__success-heading">Message Received</h3>
+            <p class="contact-section__success-body">
+              A member of the Haven team will be in touch within 24 hours.
+            </p>
+          </div>
+        } @else {
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-form" novalidate>
+
+            <div class="form-group" [class.form-group--error]="hasError('name')">
+              <label class="form-label" for="name">Full Name *</label>
+              <input id="name" type="text" class="form-input" formControlName="name"
+                     placeholder="Your name" autocomplete="name">
+              @if (hasError('name')) {
+                <span class="form-error">Please enter your name</span>
+              }
+            </div>
+
+            <div class="form-group" [class.form-group--error]="hasError('email')">
+              <label class="form-label" for="email">Email Address *</label>
+              <input id="email" type="email" class="form-input" formControlName="email"
+                     placeholder="your@email.com" autocomplete="email">
+              @if (hasError('email')) {
+                <span class="form-error">Please enter a valid email address</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input id="phone" type="tel" class="form-input" formControlName="phone"
+                     placeholder="(000) 000-0000" autocomplete="tel">
+            </div>
+
+            <div class="form-group" [class.form-group--error]="hasError('message')">
+              <label class="form-label" for="message">Message *</label>
+              <textarea id="message" class="form-input form-textarea" formControlName="message"
+                        placeholder="Tell us about your goals or any questions you have..."
+                        rows="5">
+              </textarea>
+              @if (hasError('message')) {
+                <span class="form-error">Please enter a message</span>
+              }
+            </div>
+
+            <button type="submit" class="btn btn--gold contact-form__submit" [disabled]="submitting()">
+              @if (submitting()) {
+                Sending&hellip;
+              } @else {
+                Send Message &rarr;
+              }
+            </button>
+
+          </form>
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,64 +1,27 @@
 <app-hero />
 
-<!-- ============================================================ PHILOSOPHY ============================================================ -->
-<section class="philosophy" id="about">
+<!-- ============================================================
+     TRAIN WITH PURPOSE
+============================================================ -->
+<section class="intro" id="training">
   <div class="container">
-    <div class="philosophy__grid">
+    <div class="intro__grid">
 
-      <div class="philosophy__left" appAnimateOnScroll>
-        <p class="section-label">The Standard</p>
+      <div class="intro__left" appAnimateOnScroll>
+        <p class="section-label">Train With Purpose</p>
       </div>
 
-      <div class="philosophy__right">
-        <p class="philosophy__statement" appAnimateOnScroll [delay]="80">
-          Most facilities train the masses.<br>
-          We train the committed.
+      <div class="intro__right">
+        <p class="intro__statement" appAnimateOnScroll [delay]="80">
+          HAVEN combines the energy of group training with the precision of personal coaching.
         </p>
-        <p class="philosophy__body" appAnimateOnScroll [delay]="160">
-          Haven was built for athletes who demand more from their environment,
-          their coaches, and themselves. Every session is intentional. Every member
-          is known by name. There are no crowded floors, no distraction, no compromise.
+        <p class="intro__body" appAnimateOnScroll [delay]="160">
+          Every session is led by experienced coaches who guide you through structured workouts
+          designed to improve strength, endurance, and long-term performance.
         </p>
-        <a routerLink="/gym" class="philosophy__link" appAnimateOnScroll [delay]="240">
-          Explore the facility
-          <span aria-hidden="true">&#8599;</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ TRAINING PILLARS ============================================================ -->
-<section class="pillars" id="training">
-  <div class="container">
-    <p class="section-label" appAnimateOnScroll>How We Train</p>
-    <div class="pillars__grid">
-
-      <div class="pillar" appAnimateOnScroll [delay]="0">
-        <span class="pillar__number">I</span>
-        <h3 class="pillar__title">Strength</h3>
-        <p class="pillar__body">
-          Foundational lifting protocols built around your physiology,
-          not a template.
-        </p>
-      </div>
-
-      <div class="pillar" appAnimateOnScroll [delay]="100">
-        <span class="pillar__number">II</span>
-        <h3 class="pillar__title">Conditioning</h3>
-        <p class="pillar__body">
-          Metabolic training calibrated to your output capacity
-          and recovery data.
-        </p>
-      </div>
-
-      <div class="pillar" appAnimateOnScroll [delay]="200">
-        <span class="pillar__number">III</span>
-        <h3 class="pillar__title">Recovery</h3>
-        <p class="pillar__body">
-          Guided mobility, breathing protocols, and periodised rest
-          built into every plan.
+        <p class="intro__body" appAnimateOnScroll [delay]="220">
+          Our goal is simple: help you become stronger, more capable, and more confident
+          in how you move.
         </p>
       </div>
 
@@ -66,20 +29,148 @@
   </div>
 </section>
 
-<!-- ============================================================ IMAGE STRIP ============================================================ -->
-<section class="home-images" aria-hidden="true">
-  <img src="assets/8.jpg" alt="" class="home-images__img" loading="lazy">
-  <img src="assets/9.jpg" alt="" class="home-images__img" loading="lazy">
+<!-- ============================================================
+     THE HAVEN METHOD
+============================================================ -->
+<section class="method" id="method">
+  <div class="container">
+    <p class="section-label" appAnimateOnScroll>The Haven Method</p>
+    <div class="method__grid">
+
+      <div class="method__pillar" appAnimateOnScroll [delay]="0">
+        <span class="method__number">01</span>
+        <h3 class="method__title">Performance</h3>
+        <p class="method__body">
+          Build strength and improve conditioning through structured, coach-led training.
+        </p>
+      </div>
+
+      <div class="method__pillar" appAnimateOnScroll [delay]="100">
+        <span class="method__number">02</span>
+        <h3 class="method__title">Longevity</h3>
+        <p class="method__body">
+          Train in a way that supports long-term health, resilience, and sustainable progress.
+        </p>
+      </div>
+
+      <div class="method__pillar" appAnimateOnScroll [delay]="200">
+        <span class="method__number">03</span>
+        <h3 class="method__title">Community</h3>
+        <p class="method__body">
+          Train alongside a supportive group that motivates you to show up and improve every day.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- ============================================================ MANIFESTO ============================================================ -->
-<section class="manifesto" appAnimateOnScroll>
+<!-- ============================================================
+     BANNER 1
+============================================================ -->
+<section class="image-banner" aria-hidden="true">
+  <div class="image-banner__bg" style="background-image: url('assets/7.jpg')"></div>
+</section>
+
+<!-- ============================================================
+     TRAINING OPTIONS
+============================================================ -->
+<section class="options" id="options">
   <div class="container">
-    <blockquote class="manifesto__quote">
-      The best training environment in the world is one where excellence
-      is the only acceptable standard.
-    </blockquote>
-    <cite class="manifesto__cite">Haven &mdash; est. 2024</cite>
-    <a routerLink="/classes" class="btn btn--gold manifesto__cta">Request Access</a>
+    <p class="section-label" appAnimateOnScroll>Training Options</p>
+    <div class="options__grid">
+
+      <div class="option" appAnimateOnScroll [delay]="0">
+        <div class="option__header">
+          <h3 class="option__title">Classes</h3>
+          <span class="option__arrow" aria-hidden="true">&#8599;</span>
+        </div>
+        <p class="option__body">
+          Coach-led strength and conditioning workouts designed to challenge every fitness level.
+        </p>
+      </div>
+
+      <div class="option" appAnimateOnScroll [delay]="100">
+        <div class="option__header">
+          <h3 class="option__title">Guide Sessions</h3>
+          <span class="option__arrow" aria-hidden="true">&#8599;</span>
+        </div>
+        <p class="option__body">
+          Small-group personal training focused on individualized coaching and strength development.
+        </p>
+      </div>
+
+      <div class="option" appAnimateOnScroll [delay]="200">
+        <div class="option__header">
+          <h3 class="option__title">Hybrid Training</h3>
+          <span class="option__arrow" aria-hidden="true">&#8599;</span>
+        </div>
+        <p class="option__body">
+          Combine classes and Guide sessions for the most complete training experience.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COACH-LED TRAINING
+============================================================ -->
+<section class="coaches" id="coaches">
+  <div class="container">
+    <div class="coaches__grid">
+
+      <div class="coaches__left" appAnimateOnScroll>
+        <p class="section-label">Coach-Led Training</p>
+      </div>
+
+      <div class="coaches__right">
+        <p class="coaches__statement" appAnimateOnScroll [delay]="80">
+          Every session at HAVEN is led by experienced coaches focused on helping members improve.
+        </p>
+        <p class="coaches__body" appAnimateOnScroll [delay]="160">
+          Our coaches provide structure, accountability, and guidance so members always know
+          they're training with purpose.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BANNER 2
+============================================================ -->
+<section class="image-banner" aria-hidden="true">
+  <div class="image-banner__bg" style="background-image: url('assets/3.jpg')"></div>
+</section>
+
+<!-- ============================================================
+     COMMUNITY
+============================================================ -->
+<section class="community" id="community">
+  <div class="container">
+    <h2 class="community__headline" appAnimateOnScroll>HAVEN is more<br>than a workout.</h2>
+    <p class="community__body" appAnimateOnScroll [delay]="120">
+      Members support each other, celebrate progress together, and create an environment
+      where everyone is motivated to improve.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section class="final-cta" appAnimateOnScroll>
+  <div class="container">
+    <h2 class="final-cta__headline">Ready to Train?</h2>
+    <p class="final-cta__body">
+      Explore our schedule and find the session that fits your goals.
+    </p>
+    <div class="final-cta__buttons">
+      <a routerLink="/schedule" class="btn btn--primary">View Schedule</a>
+      <a routerLink="/contact" class="btn btn--ghost-dark">Contact Us</a>
+    </div>
   </div>
 </section>

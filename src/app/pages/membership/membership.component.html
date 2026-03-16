@@ -1,0 +1,156 @@
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="mem-hero">
+  <div class="mem-hero__bg" style="background-image: url('assets/4.jpg')"></div>
+  <div class="mem-hero__overlay"></div>
+  <div class="mem-hero__content container">
+
+    <p class="mem-hero__eyebrow">
+      <span class="mem-hero__rule" aria-hidden="true"></span>
+      Paramus, NJ
+    </p>
+
+    <h1 class="mem-hero__headline">MEMBERSHIP<br>OPTIONS</h1>
+
+    <p class="mem-hero__subtext">
+      Choose the training option that best fits your goals and schedule.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MEMBERSHIP TIERS
+============================================================ -->
+<section class="tiers">
+  <div class="container">
+    <p class="section-label" appAnimateOnScroll>Choose Your Path</p>
+    <div class="tiers__grid">
+
+      <!-- Classes -->
+      <div class="tier" appAnimateOnScroll [delay]="0">
+        <div class="tier__top">
+          <span class="tier__number">01</span>
+        </div>
+        <h2 class="tier__name">Classes</h2>
+        <div class="tier__rule"></div>
+        <p class="tier__desc">
+          Unlimited coach-led strength and conditioning workouts.
+        </p>
+        <p class="tier__detail">
+          Perfect for members who want high-energy group training and structured programming.
+        </p>
+        <a routerLink="/schedule" class="btn btn--ghost tier__btn">Get Started</a>
+      </div>
+
+      <!-- Hybrid — featured/highlighted -->
+      <div class="tier tier--featured" appAnimateOnScroll [delay]="120">
+        <div class="tier__top">
+          <span class="tier__number">02</span>
+          <span class="tier__badge">Most Complete</span>
+        </div>
+        <h2 class="tier__name">Hybrid</h2>
+        <div class="tier__rule"></div>
+        <p class="tier__desc">
+          The most complete HAVEN experience.
+        </p>
+        <p class="tier__detail">
+          Combine coach-led classes with Guide sessions for the perfect balance of strength training and conditioning.
+        </p>
+        <a routerLink="/schedule" class="btn tier__btn tier__btn--featured">Get Started</a>
+      </div>
+
+      <!-- Guide -->
+      <div class="tier" appAnimateOnScroll [delay]="240">
+        <div class="tier__top">
+          <span class="tier__number">03</span>
+        </div>
+        <h2 class="tier__name">Guide</h2>
+        <div class="tier__rule"></div>
+        <p class="tier__desc">
+          Small-group personal training focused on strength development and personalized coaching.
+        </p>
+        <p class="tier__detail">
+          For members who want focused, individualized attention within a small group setting.
+        </p>
+        <a routerLink="/schedule" class="btn btn--ghost tier__btn">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     IMAGE BANNER
+============================================================ -->
+<div class="mem-banner" aria-hidden="true">
+  <div class="mem-banner__bg" style="background-image: url('assets/1.jpg')"></div>
+</div>
+
+<!-- ============================================================
+     WHY MEMBERS LOVE HAVEN
+============================================================ -->
+<section class="why">
+  <div class="container">
+    <div class="why__header" appAnimateOnScroll>
+      <p class="section-label">Why Members Love Haven</p>
+      <h2 class="why__heading">BUILT AROUND<br>THE MEMBER.</h2>
+    </div>
+    <ul class="why__list">
+      <li class="why__item" appAnimateOnScroll [delay]="0">
+        <span class="why__index" aria-hidden="true">01</span>
+        <p class="why__text">Coach-led training with expert guidance.</p>
+      </li>
+      <li class="why__item" appAnimateOnScroll [delay]="120">
+        <span class="why__index" aria-hidden="true">02</span>
+        <p class="why__text">Small group environment with personalized attention.</p>
+      </li>
+      <li class="why__item" appAnimateOnScroll [delay]="240">
+        <span class="why__index" aria-hidden="true">03</span>
+        <p class="why__text">Strong community-driven culture.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     CAMERON LOPEZ — COACHING EXPERIENCE
+============================================================ -->
+<section class="coach">
+  <div class="container">
+    <div class="coach__grid">
+
+      <div class="coach__text" appAnimateOnScroll>
+        <p class="section-label">Coaching Experience You Can Trust</p>
+        <div class="coach__stat">
+          <span class="coach__stat-number">11</span>
+          <span class="coach__stat-label">Years of<br>Experience</span>
+        </div>
+        <p class="coach__bio">
+          HAVEN was founded by Cameron Lopez, a personal trainer and group fitness coach with
+          over 11 years of experience helping individuals build strength, improve movement,
+          and develop long-term training habits.
+        </p>
+      </div>
+
+      <div class="coach__image-wrap" appAnimateOnScroll [delay]="100">
+        <div class="coach__image" style="background-image: url('assets/6.jpg')"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section class="mem-cta" appAnimateOnScroll>
+  <div class="container">
+    <h2 class="mem-cta__headline">READY TO<br>TRAIN?</h2>
+    <div class="mem-cta__buttons">
+      <a routerLink="/schedule" class="btn mem-cta__btn--schedule">View Schedule</a>
+      <a routerLink="/founding-membership" class="btn mem-cta__btn--join">Join HAVEN</a>
+    </div>
+  </div>
+</section>

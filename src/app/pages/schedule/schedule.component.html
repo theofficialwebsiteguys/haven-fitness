@@ -1,0 +1,108 @@
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="sched-hero">
+  <div class="sched-hero__bg" style="background-image: url('assets/2.jpg')"></div>
+  <div class="sched-hero__overlay"></div>
+  <div class="sched-hero__content container">
+
+    <p class="sched-hero__eyebrow">
+      <span class="sched-hero__rule" aria-hidden="true"></span>
+      Paramus, NJ
+    </p>
+
+    <h1 class="sched-hero__headline">TRAIN<br>WITH US</h1>
+
+    <p class="sched-hero__subtext">
+      Explore our weekly schedule and find the session that fits your goals.
+    </p>
+
+    <a href="#schedule" class="btn btn--gold">Book Your First Session</a>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     GLOFOX SCHEDULE EMBED
+============================================================ -->
+<section class="sched-embed" id="schedule">
+  <div class="sched-embed__header container" appAnimateOnScroll>
+    <p class="section-label">Weekly Schedule</p>
+    <h2 class="sched-embed__heading">FIND YOUR SESSION</h2>
+  </div>
+  <div class="sched-embed__frame">
+    <iframe
+      src="https://app.glofox.com/portal/#/branch/6998c391abe29d56820646da/classes-day-view"
+      title="Haven — Book a Session"
+      width="100%"
+      height="1100"
+      loading="lazy"
+      style="border: none; display: block;">
+    </iframe>
+  </div>
+</section>
+
+<!-- ============================================================
+     IMAGE BANNER
+============================================================ -->
+<div class="sched-banner" aria-hidden="true">
+  <div class="sched-banner__bg" style="background-image: url('assets/5.jpg')"></div>
+</div>
+
+<!-- ============================================================
+     WHAT TO EXPECT
+============================================================ -->
+<section class="expect" appAnimateOnScroll>
+  <div class="container">
+
+    <div class="expect__intro">
+      <p class="section-label">What to Expect</p>
+      <h2 class="expect__heading">THREE WAYS<br>TO TRAIN</h2>
+    </div>
+
+    <div class="expect__grid">
+
+      <div class="expect__item" appAnimateOnScroll [delay]="0">
+        <span class="expect__number" aria-hidden="true">01</span>
+        <h3 class="expect__title">Classes</h3>
+        <div class="expect__divider"></div>
+        <p class="expect__body">
+          Coach-led strength and conditioning workouts designed to challenge every fitness level.
+        </p>
+      </div>
+
+      <div class="expect__item" appAnimateOnScroll [delay]="120">
+        <span class="expect__number" aria-hidden="true">02</span>
+        <h3 class="expect__title">Guide Sessions</h3>
+        <div class="expect__divider"></div>
+        <p class="expect__body">
+          Small-group personal training with focused coaching and individualized attention.
+        </p>
+      </div>
+
+      <div class="expect__item" appAnimateOnScroll [delay]="240">
+        <span class="expect__number" aria-hidden="true">03</span>
+        <h3 class="expect__title">Hybrid Training</h3>
+        <div class="expect__divider"></div>
+        <p class="expect__body">
+          A combination of classes and Guide sessions for the most complete training experience.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEW TO HAVEN
+============================================================ -->
+<section class="new-to-haven" appAnimateOnScroll>
+  <div class="container">
+    <p class="new-to-haven__label section-label">New to Haven?</p>
+    <h2 class="new-to-haven__headline">START WITH<br>ANY CLASS.</h2>
+    <p class="new-to-haven__body">
+      Our coaches will guide you through everything.
+    </p>
+    <a routerLink="/membership" class="btn btn--primary">View Membership Options</a>
+  </div>
+</section>
