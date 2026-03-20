@@ -10,7 +10,6 @@
     <nav class="nav__links" aria-label="Primary navigation">
       <a routerLink="/schedule"            routerLinkActive="nav__link--active" class="nav__link">Schedule</a>
       <a routerLink="/membership"          routerLinkActive="nav__link--active" class="nav__link">Membership</a>
-      <a routerLink="/founding-membership" routerLinkActive="nav__link--active" class="nav__link">Founding Membership</a>
     </nav>
 
     <!-- Right CTAs (desktop) -->
@@ -38,7 +37,6 @@
       <a routerLink="/"                    [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Home</a>
       <a routerLink="/schedule"            routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Schedule</a>
       <a routerLink="/membership"          routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Membership</a>
-      <a routerLink="/founding-membership" routerLinkActive="nav__drawer-link--active" class="nav__drawer-link" (click)="closeMenu()">Founding Membership</a>
     </nav>
     <div class="nav__drawer-actions">
       <a routerLink="/contact"    class="nav__btn nav__btn--ghost" (click)="closeMenu()">Contact</a>

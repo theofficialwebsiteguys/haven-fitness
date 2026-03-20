@@ -41,9 +41,9 @@
   --space-sm:  0.875rem;
   --space-md:  1.5rem;
   --space-lg:  2.5rem;
-  --space-xl:  4rem;
-  --space-2xl: 7rem;
-  --space-3xl: 11rem;
+  --space-xl:  3.5rem;
+  --space-2xl: 5.5rem;
+  --space-3xl: 8.5rem;
 
   // Layout
   --max-width: 1440px;
@@ -78,7 +78,7 @@ html {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

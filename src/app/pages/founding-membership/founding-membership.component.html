@@ -1,24 +1,4 @@
 <!-- ============================================================
-     ALERT TICKER
-============================================================ -->
-<div class="fm-ticker" aria-label="Founding membership alert">
-  <div class="fm-ticker__track">
-    <span class="fm-ticker__item"><span class="fm-ticker__dot" aria-hidden="true"></span>FOUNDING MEMBERSHIPS NOW OPEN</span>
-    <span class="fm-ticker__item" aria-hidden="true">·</span>
-    <span class="fm-ticker__item" aria-hidden="true">LIMITED TO 75 MEMBERS</span>
-    <span class="fm-ticker__item" aria-hidden="true">·</span>
-    <span class="fm-ticker__item" aria-hidden="true">RATES LOCK IN FOR LIFE</span>
-    <span class="fm-ticker__item" aria-hidden="true">·</span>
-    <span class="fm-ticker__item" aria-hidden="true"><span class="fm-ticker__dot"></span>FOUNDING MEMBERSHIPS NOW OPEN</span>
-    <span class="fm-ticker__item" aria-hidden="true">·</span>
-    <span class="fm-ticker__item" aria-hidden="true">LIMITED TO 75 MEMBERS</span>
-    <span class="fm-ticker__item" aria-hidden="true">·</span>
-    <span class="fm-ticker__item" aria-hidden="true">RATES LOCK IN FOR LIFE</span>
-    <span class="fm-ticker__item" aria-hidden="true">·</span>
-  </div>
-</div>
-
-<!-- ============================================================
      HERO
 ============================================================ -->
 <section class="fm-hero">
@@ -38,7 +18,7 @@
       founding rates will no longer be available.
     </p>
 
-    <a href="#founding-options" class="btn btn--gold">Join Founding Membership</a>
+    <a routerLink="/membership" class="btn btn--gold">Join Founding Membership</a>
 
   </div>
 </section>
@@ -69,7 +49,7 @@
           This is a one-time opportunity to secure your rate and become part of Haven
           from the very beginning.
         </p>
-        <a href="#founding-options" class="btn btn--ghost">View Founding Rates</a>
+        <a [routerLink]="[]" fragment="founding-options" class="btn btn--ghost">View Founding Rates</a>
       </div>
 
     </div>
@@ -123,7 +103,7 @@
             <p class="price-card__feature">Unlimited classes (1 per day)</p>
           </div>
         </div>
-        <a href="#" class="btn btn--ghost tier-group__cta">Get Started</a>
+        <a routerLink="/membership" class="btn btn--ghost tier-group__cta">Get Started</a>
       </div>
 
       <!-- Hybrid Memberships — featured -->
@@ -150,7 +130,7 @@
             <p class="price-card__feature">1 class/day + 1 semi-private/week</p>
           </div>
         </div>
-        <a href="#" class="btn tier-group__cta tier-group__cta--featured">Get Started</a>
+        <a routerLink="/membership" class="btn tier-group__cta tier-group__cta--featured">Get Started</a>
       </div>
 
     </div>
@@ -307,7 +287,7 @@
     <p class="section-label">75 Spots. No Extensions.</p>
     <h2 class="fm-cta__headline">SECURE YOUR<br>RATE TODAY.</h2>
     <div class="fm-cta__buttons">
-      <a href="#founding-options" class="btn fm-cta__btn--join">Join Founding Membership</a>
+      <a routerLink="/membership" class="btn fm-cta__btn--join">Join Founding Membership</a>
       <a routerLink="/schedule" class="btn btn--ghost">View Schedule</a>
     </div>
   </div>
