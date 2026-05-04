@@ -1,5 +1,18 @@
-<section class="page-hero">
-  <div class="page-hero__ambient" aria-hidden="true"></div>
+<section class="page-hero" aria-labelledby="page-hero-title">
+
+  @if (image()) {
+    <div class="page-hero__image-wrap" aria-hidden="true"
+         [style.background-image]="'url(' + image() + ')'"></div>
+  } @else {
+    <div class="page-hero__video-wrap" aria-hidden="true">
+      <video class="page-hero__video" autoplay muted loop playsinline preload="none">
+        <source src="assets/video.mp4" type="video/mp4">
+      </video>
+    </div>
+  }
+
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+
   <div class="container">
     <div class="page-hero__inner">
 
@@ -7,7 +20,7 @@
         <p class="page-hero__label section-label">{{ label() }}</p>
       }
 
-      <h1 class="page-hero__title">{{ title() }}</h1>
+      <h1 class="page-hero__title" id="page-hero-title">{{ title() }}</h1>
 
       @if (description()) {
         <p class="page-hero__description">{{ description() }}</p>
@@ -15,5 +28,5 @@
 
     </div>
   </div>
-  <div class="page-hero__rule"></div>
+
 </section>

@@ -11,4 +11,5 @@ export class PageHeroComponent {
   label       = input('');
   title       = input.required<string>();
   description = input('');
+  image       = input('');
 }

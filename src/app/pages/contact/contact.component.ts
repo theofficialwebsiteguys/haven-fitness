@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { PageHeroComponent } from '../../components/page-hero/page-hero.component';
 import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll.directive';
+import { EmailService } from '../../email.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,8 @@ import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll.dir
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  private fb = inject(FormBuilder);
+  private fb           = inject(FormBuilder);
+  private emailService = inject(EmailService);
 
   form = this.fb.group({
     name:    ['', [Validators.required, Validators.minLength(2)]],
@@ -20,7 +22,7 @@ export class ContactComponent {
     message: ['', Validators.required],
   });
 
-  submitted = signal(false);
+  submitted  = signal(false);
   submitting = signal(false);
 
   onSubmit(): void {
@@ -28,11 +30,26 @@ export class ContactComponent {
       this.form.markAllAsTouched();
       return;
     }
+
     this.submitting.set(true);
-    setTimeout(() => {
-      this.submitting.set(false);
-      this.submitted.set(true);
-    }, 800);
+
+    const { name, email, phone, message } = this.form.value;
+
+    this.emailService.submitForm({
+      name:    name    ?? '',
+      email:   email   ?? '',
+      phone:   phone   ?? '',
+      message: message ?? '',
+    }).subscribe({
+      next: () => {
+        this.submitting.set(false);
+        this.submitted.set(true);
+      },
+      error: () => {
+        this.submitting.set(false);
+        alert('There was an issue sending your message. Please try again.');
+      },
+    });
   }
 
   hasError(field: string): boolean {

@@ -115,6 +115,24 @@
 }
 
 // ============================================================
+// Train With Purpose Photo
+// ============================================================
+.intro-photo {
+  position: relative;
+  height: clamp(360px, 52vh, 680px);
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(10%) brightness(0.88);
+    transform: scale(1.03);
+  }
+}
+
+// ============================================================
 // Image Banner (cinematic full-width, parallax)
 // ============================================================
 .image-banner {

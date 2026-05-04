@@ -1,24 +1,54 @@
 .page-hero {
   position: relative;
-  padding-top: calc(72px + var(--space-2xl));
-  padding-bottom: var(--space-2xl);
-  background-color: var(--color-bg);
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
 
-  &__ambient {
+  &__video-wrap {
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-      ellipse 60% 60% at 50% 0%,
-      rgba(168, 159, 122, 0.06) 0%,
-      transparent 65%
+    z-index: 0;
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__image-wrap {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.65);
+    z-index: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(13, 12, 11, 0.30) 0%,
+      rgba(13, 12, 11, 0.65) 55%,
+      rgba(13, 12, 11, 0.92) 100%
     );
+    z-index: 1;
     pointer-events: none;
   }
 
-  &__inner {
+  .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    padding-top: calc(72px + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
+  }
+
+  &__inner {
     max-width: 900px;
   }
 
@@ -30,7 +60,7 @@
   &__title {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(2.75rem, 7vw, 6.5rem);
+    font-size: clamp(3.5rem, 9vw, 9rem);
     line-height: 0.9;
     letter-spacing: var(--tracking-tight);
     text-transform: uppercase;
@@ -47,14 +77,5 @@
     color: var(--color-text-secondary);
     max-width: 52ch;
     animation: fade-slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
-  }
-
-  &__rule {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--color-border);
   }
 }

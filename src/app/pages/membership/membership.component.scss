@@ -14,19 +14,17 @@
   justify-content: flex-end;
   overflow: hidden;
 
-  &__bg {
+  &__video-wrap {
     position: absolute;
-    inset: -10% 0;
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;
-    filter: grayscale(15%) brightness(0.60);
+    inset: 0;
     z-index: 0;
+  }
 
-    @media (max-width: 768px) {
-      inset: 0;
-      background-attachment: scroll;
-    }
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   &__overlay {
@@ -689,6 +687,8 @@
 // ============================================================
 // Founding Options
 // ============================================================
+// Founding Options Section
+// ============================================================
 .founding-options {
   padding-block: var(--space-3xl);
   background-color: var(--color-bg);
@@ -696,6 +696,7 @@
 
   &__header {
     margin-bottom: var(--space-2xl);
+    max-width: 700px;
 
     .section-label { margin-bottom: var(--space-lg); }
   }
@@ -707,7 +708,17 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--color-text-primary);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  &__intro {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    max-width: 56ch;
   }
 
   &__urgency {
@@ -721,7 +732,6 @@
     color: var(--color-text-secondary);
     border: 1px solid var(--color-border-mid);
     padding: 0.5rem 1rem;
-    margin-top: var(--space-lg);
 
     @media (max-width: 480px) {
       font-size: var(--text-2xs);
@@ -742,32 +752,46 @@
   &__groups {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background-color: rgba(255, 255, 255, 0.18);
+    grid-template-rows: auto 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       grid-template-columns: 1fr;
+      grid-template-rows: none;
+      gap: var(--space-xl);
     }
   }
 }
 
-// Tier Group
-.tier-group {
+// ============================================================
+// Founding Option Group (Class / Hybrid)
+// ============================================================
+.fo-group {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
   padding: var(--space-xl);
-  background-color: var(--color-bg-elevated);
-  display: flex;
-  flex-direction: column;
+  border: 1px solid var(--color-border);
 
   @media (max-width: 480px) {
     padding: var(--space-lg) var(--space-md);
   }
 
-  &__header {
-    margin-bottom: var(--space-xl);
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    grid-row: auto;
+  }
 
-    @media (max-width: 480px) {
-      margin-bottom: var(--space-lg);
-    }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    // no margin-bottom — spacing comes from __tiers padding-top
+    // stretch fills the subgrid row so the border lands at the same line on both cards
   }
 
   &__badge {
@@ -781,6 +805,14 @@
     color: #000000;
     padding: 0.2rem 0.65rem;
     margin-bottom: var(--space-md);
+
+    // Invisible placeholder — keeps header height in sync with Hybrid
+    &--ghost {
+      background: transparent;
+      color: transparent;
+      pointer-events: none;
+      user-select: none;
+    }
   }
 
   &__name {
@@ -795,26 +827,141 @@
 
   &__desc {
     font-family: var(--font-body);
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    font-weight: 400;
     letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
   }
 
-  &__cards {
+  &__tiers {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 0;
     flex: 1;
-    margin-bottom: var(--space-xl);
+    padding-top: var(--space-xl);
+  }
 
-    @media (max-width: 480px) {
-      margin-bottom: var(--space-lg);
+  // Featured (Hybrid) — white card treatment
+  &--featured {
+    background-color: #ffffff;
+    border-color: #ffffff;
+
+    .fo-group__header {
+      border-bottom-color: rgba(0, 0, 0, 0.10);
+    }
+
+    .fo-group__name { color: #000000; }
+    .fo-group__desc { color: rgba(0, 0, 0, 0.40); }
+  }
+}
+
+// ============================================================
+// Individual Tier Row
+// ============================================================
+.fo-tier {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: opacity var(--dur-base) var(--ease-out);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: fm-pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  &__num {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  &__status {
+    font-family: var(--font-body);
+    font-size: var(--text-2xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+
+    &--open {
+      color: #000000;
+      background: #ffffff;
+    }
+
+    &--locked {
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
     }
   }
 
+  &__include {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  &__spots {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  &__spots-count {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--color-text-primary);
+  }
+
+  &__spots-label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 400;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+
   &__cta {
-    width: 100%;
+    margin-top: var(--space-sm);
+    align-self: flex-start;
+    min-width: 180px;
     justify-content: center;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
   }
 
   &__cta--featured {
@@ -830,98 +977,49 @@
     align-items: center;
     justify-content: center;
     padding: 0.75rem 2rem;
-    width: 100%;
+    margin-top: var(--space-sm);
+    align-self: flex-start;
+    min-width: 180px;
     cursor: pointer;
     transition: background-color var(--dur-fast) var(--ease-out);
 
-    &:hover { background: #222222; border-color: #222222; }
-  }
-
-  &--featured {
-    background-color: #ffffff;
-
-    .tier-group__name { color: #000000; }
-    .tier-group__desc { color: rgba(0, 0, 0, 0.45); }
-  }
-}
-
-// Individual price card
-.price-card {
-  display: grid;
-  grid-template-columns: 3.5rem 1fr auto;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md);
-  background-color: var(--color-surface);
-  border-left: 2px solid transparent;
-  transition: border-color var(--dur-fast) var(--ease-out),
-              background-color var(--dur-fast) var(--ease-out);
-
-  @media (max-width: 480px) {
-    grid-template-columns: 3rem 1fr auto;
-    gap: var(--space-xs);
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  &:hover {
-    border-left-color: var(--color-border-mid);
-    background-color: rgba(255, 255, 255, 0.04);
-  }
-
-  &__tier {
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    font-weight: 600;
-    letter-spacing: var(--tracking-widest);
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-
     @media (max-width: 480px) {
-      font-size: var(--text-2xs);
+      width: 100%;
     }
+
+    &:hover { background: #222222; }
   }
 
-  &__price {
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    letter-spacing: 0.02em;
-    color: var(--color-text-primary);
-    white-space: nowrap;
-    justify-self: end;
+  // Active / open tier — full visibility
+  &--active {
+    opacity: 1;
   }
 
-  &__per {
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    font-weight: 400;
-    color: var(--color-text-muted);
-    margin-left: 0.1em;
+  // Locked tiers — progressively faded
+  &--locked {
+    pointer-events: none;
   }
 
-  &__feature {
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    font-weight: 400;
-    color: var(--color-text-muted);
-
-    @media (max-width: 480px) {
-      font-size: var(--text-2xs);
-    }
+  &--dim-1 {
+    opacity: 0.30;
   }
 
+  &--dim-2 {
+    opacity: 0.14;
+  }
+
+  // Featured tier variants (inside white Hybrid card)
   &--featured {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-left-color: transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
 
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.08);
-      border-left-color: rgba(0, 0, 0, 0.20);
-    }
+    .fo-tier__dot     { background: #000000; }
+    .fo-tier__num     { color: #000000; }
+    .fo-tier__include { color: rgba(0, 0, 0, 0.55); }
+    .fo-tier__spots-count { color: #000000; }
+    .fo-tier__spots-label { color: rgba(0, 0, 0, 0.40); }
 
-    .price-card__tier    { color: rgba(0, 0, 0, 0.40); }
-    .price-card__price   { color: #000000; }
-    .price-card__per     { color: rgba(0, 0, 0, 0.40); }
-    .price-card__feature { color: rgba(0, 0, 0, 0.50); }
+    .fo-tier__status--open   { background: #000000; color: #ffffff; }
+    .fo-tier__status--locked { color: rgba(0, 0, 0, 0.40); border-color: rgba(0, 0, 0, 0.15); }
   }
 }
 
